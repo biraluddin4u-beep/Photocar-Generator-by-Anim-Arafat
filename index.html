@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tusovka Card Generator Pro - Ultimate</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;800&family=Noto+Serif+Bengali:wght@400;600;800&family=Anek+Bangla:wght@400;600;800&family=Baloo+Da+2:wght@400;600;800&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;800&family=Noto+Serif+Bengali:wght@400;600;800&family=Anek+Bangla:wght@400;600;800&family=Baloo+Da+2:wght@400;600;800&family=Tiro+Bangla&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
 :root{--i:#4f46e5}*{box-sizing:border-box}
-body{margin:0;height:100vh;display:flex;flex-direction:column;font:13px Inter,sans-serif;background:#6b7280;color:#1e293b;overflow:hidden}
+body{margin:0;height:100vh;display:flex;flex-direction:column;font:13px 'Times New Roman',serif;background:#6b7280;color:#1e293b;overflow:hidden}
 header{height:54px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #e2e8f0;gap:8px;flex:none}
 .brand{display:flex;align-items:center;gap:10px}.lg{background:var(--i);color:#fff;width:34px;height:34px;border-radius:8px;display:grid;place-items:center}
 .brand b.t{font-size:14px}.brand small{color:#64748b;font-size:11px}.pro{background:#fde047;border-radius:4px;padding:0 5px;font-size:10px;margin-left:4px}
@@ -36,7 +36,7 @@ details{border-bottom:1px solid #f1f5f9}summary{padding:12px 16px;font-weight:60
 #tn{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 #fd{position:absolute;left:0;right:0;bottom:0;height:85%;pointer-events:none}
 #tx{flex:1;min-height:0;position:relative;overflow:hidden}#ac{position:absolute;left:0;top:0;width:100%;z-index:3}
-#ad{flex:none;background:#fff;align-items:center;justify-content:center;overflow:hidden}#am{width:100%;height:100%;pointer-events:none}
+#ad{position:absolute;bottom:0;left:0;width:100%;background:#fff;align-items:center;justify-content:center;overflow:hidden;z-index:10}#am{width:100%;height:100%;pointer-events:none}
 .d{position:absolute;transform:translate(-50%,-50%);cursor:move;touch-action:none;user-select:none;white-space:pre-wrap;z-index:5;text-align:center}
 .d:hover{outline:1px dashed #fff9;outline-offset:3px}#lg2{object-fit:contain;height:auto;z-index:20}
 #bd2{padding:4px 14px;border-radius:5px;font-weight:700;z-index:20;white-space:nowrap}
@@ -69,57 +69,33 @@ details{border-bottom:1px solid #f1f5f9}summary{padding:12px 16px;font-weight:60
 <script>
 const $=id=>document.getElementById(id),ph=(w,h,t,bg,fg)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="100%" height="100%" fill="${bg}"/><text x="50%" y="50%" fill="${fg}" font-family="sans-serif" font-size="${h/8}" text-anchor="middle" dominant-baseline="middle">${t}</text></svg>`);
 const D={ratio:'4/5',imgSrc:ph(800,600,'Upload Featured Image','#cbd5e1','#475569'),imgH:48,fit:'cover',zoom:100,imgX:50,imgY:50,bri:100,con:100,sat:100,gray:0,sep:0,blur:0,ov:0,tint:'#000000',tintOp:0,vig:0,
-font:'Hind Siliguri',align:'center',shad:3,upper:false,
-subText:'Subheading or Category',subSize:24,subColor:'#facc15',subW:'700',subX:50,subY:25,
-headText:'Enter your main headline or powerful quote here',headSize:44,headColor:'#ffffff',headW:'800',headLH:1.3,headLS:0,headWd:90,headX:50,headY:65,
+font:'Hind Siliguri',align:'left',shad:3,
+subOn:true,subText:'Subheading or Category',subSize:40,subColor:'#facc15',subW:'800',subX:50,subY:9,
+headText:'Enter your main headline or powerful quote here',headSize:60,headColor:'#ffffff',headW:'800',headLH:1.15,headLS:0,headWd:90,headX:50,headY:42,
 bg1:'#b90000',bg2:'#6b0000',gOn:false,gAng:160,acOn:false,acC:'#facc15',acH:6,
-logoOn:true,logoSrc:ph(400,200,'Your Logo','#ffffff','#000000'),logoW:25,logoX:82.5,logoY:9,logoOp:100,
-bdOn:false,bdText:'BREAKING',bdBg:'#facc15',bdFg:'#000000',bdSize:16,bdX:18,bdY:5,
-crOn:false,crText:'Photo: Source Name',crSize:12,crColor:'#ffffff',crX:14,crY:94,
-ftOn:false,ftText:'www.yourwebsite.com',ftSize:13,ftColor:'#ffffff',ftX:50,ftY:92,
+logoOn:true,logoSrc:ph(400,200,'Your Logo','#ffffff','#000000'),logoW:20,logoX:85.7,logoY:6,logoOp:100,
+bdOn:false,bdText:'এক্সক্লুসিভ',bdBg:'#facc15',bdFg:'#000000',bdSize:16,bdX:18,bdY:5,
+crOn:false,crText:'Photo: Collected',crSize:12,crColor:'#ffffff',crX:14,crY:94,
+ftOn:true,ftText:'www.mzamin.com',ftSize:13,ftColor:'#ffffff',ftX:50,ftY:92,
 adOn:true,adSrc:ph(1200,200,'Your 1200x200 Ad Banner Here','#f8fafc','#64748b'),adH:12,adFit:'contain',
 bw:0,bc:'#ffffff',rad:0,exFmt:'png',exW:'1080',exQ:0.95};
-const FN=['Inter', 'Hind Siliguri','Noto Sans Bengali','Noto Serif Bengali','Anek Bangla','Baloo Da 2','Tiro Bangla'],WT=['400','500','600','700','800'];
+const FN=['Hind Siliguri','Times New Roman', 'Noto Sans Bengali','Noto Serif Bengali','Anek Bangla','Baloo Da 2','Tiro Bangla'],WT=['400','500','600','700','800'];
 const SC=[
 ['Featured image',[['imgSrc','Upload (or drop / Ctrl+V)','f'],['imgH','Height','r',10,85,1,'%'],['fit','Fit','s',['cover','contain','fill']],['zoom','Zoom','r',100,300,1,'%'],['imgX','Pan X (drag image)','r',0,100,1,'%'],['imgY','Pan Y','r',0,100,1,'%'],['','Filters','h'],['bri','Brightness','r',0,200,1,'%'],['con','Contrast','r',0,200,1,'%'],['sat','Saturation','r',0,300,1,'%'],['gray','Grayscale','r',0,100,1,'%'],['sep','Sepia','r',0,100,1,'%'],['blur','Blur','r',0,10,.5,'px'],['','Overlays','h'],['tint','Tint color','k'],['tintOp','Tint strength','r',0,100,1,'%'],['vig','Vignette','r',0,100,1,'%'],['ov','Bottom fade into text area','r',0,100,1,'%']]],
-['Text',[['font','Font','s',FN],['align','Alignment','s',['center','left','right']],['shad','Text shadow','r',0,14,1,'px'],['upper','UPPERCASE headline','c'],['','Sub heading','h'],['subText','Text','t'],['subSize','Size','r',12,70,1,'px'],['subColor','Color','k'],['subW','Weight','s',WT],['subX','X (drag on card)','r',0,100,1,'%'],['subY','Y','r',0,100,1,'%'],['','Main heading','h'],['headText','Text','a'],['headSize','Size','r',20,120,1,'px'],['headColor','Color','k'],['headW','Weight','s',WT],['headLH','Line height','r',1,2,.05],['headLS','Letter spacing','r',-2,10,.5,'px'],['headWd','Box width','r',30,100,1,'%'],['headX','X','r',0,100,1,'%'],['headY','Y','r',0,100,1,'%']]],
+['Text',[['font','Font','s',FN],['align','Alignment','s',['center','left','right']],['shad','Text shadow','r',0,14,1,'px'],['','Sub heading','h'],['subOn','Show sub heading','c'],['subText','Text','t'],['subSize','Size','r',12,70,1,'px'],['subColor','Color','k'],['subW','Weight','s',WT],['subX','X (drag on card)','r',0,100,1,'%'],['subY','Y','r',0,100,1,'%'],['','Main heading','h'],['headText','Text','a'],['headSize','Size','r',20,120,1,'px'],['headColor','Color','k'],['headW','Weight','s',WT],['headLH','Line height','r',1,2,.05],['headLS','Letter spacing','r',-2,10,.5,'px'],['headWd','Box width','r',30,100,1,'%'],['headX','X','r',0,100,1,'%'],['headY','Y','r',0,100,1,'%']]],
 ['Background & accent',[['bg1','Color 1','k'],['gOn','Use gradient','c'],['bg2','Color 2','k'],['gAng','Gradient angle','r',0,360,1,'°'],['acOn','Top accent bar','c'],['acC','Accent color','k'],['acH','Accent thickness','r',1,30,1,'px']]],
 ['Logo',[['logoOn','Show logo','c'],['logoSrc','Upload logo','f'],['logoW','Size','r',5,80,1,'%'],['logoX','X (drag)','r',0,100,1,'%'],['logoY','Y','r',0,100,1,'%'],['logoOp','Opacity','r',10,100,1,'%']]],
-['Badge, credit & footer',[['bdOn','Show badge','c'],['bdText','Badge text','t'],['bdBg','Badge color','k'],['bdFg','Badge text color','k'],['bdSize','Size','r',10,40,1,'px'],['bdX','X','r',0,100,1,'%'],['bdY','Y','r',0,100,1,'%'],['','Photo credit (on image)','h'],['crOn','Show credit','c'],['crText','Text','t'],['crSize','Size','r',8,30,1,'px'],['crColor','Color','k'],['crX','X','r',0,100,1,'%'],['crY','Y','r',0,100,1,'%'],['','Footer (on text area)','h'],['ftOn','Show footer','c'],['ftText','Text','t'],['ftSize','Size','r',8,30,1,'px'],['ftColor','Color','k'],['ftX','X','r',0,100,1,'%'],['ftY','Y','r',0,100,1,'%']]],
+['Badge, credit & footer',[['bdOn','Show badge','c'],['bdText','Badge text','s',['এক্সক্লুসিভ','ব্রেকিং','এইমাত্র পাওয়া']],['bdBg','Badge color','k'],['bdFg','Badge text color','k'],['bdSize','Size','r',10,40,1,'px'],['bdX','X','r',0,100,1,'%'],['bdY','Y','r',0,100,1,'%'],['','Photo credit (on image)','h'],['crOn','Show credit','c'],['crText','Text','s',['Photo: AI','Photo: Collected']],['crSize','Size','r',8,30,1,'px'],['crColor','Color','k'],['crX','X','r',0,100,1,'%'],['crY','Y','r',0,100,1,'%'],['','Footer (on text area)','h'],['ftOn','Show footer','c'],['ftText','Text','t'],['ftSize','Size','r',8,30,1,'px'],['ftColor','Color','k'],['ftX','X','r',0,100,1,'%'],['ftY','Y','r',0,100,1,'%']]],
 ['Ad banner',[['adOn','Show ad banner','c'],['adSrc','Upload banner','f'],['adH','Height','r',5,40,1,'%'],['adFit','Fit','s',['contain','fill','cover']]]],
 ['Frame',[['bw','Border width','r',0,30,1,'px'],['bc','Border color','k'],['rad','Corner radius','r',0,80,1,'px']]],
 ['Export',[['exFmt','Format','s',['png','jpeg']],['exW','Width (px)','s',['640','1080','1440','1920']],['exQ','JPG quality','r',.5,1,.05]]]];
 
 const TH=[
-['Cinematic Melt',{bg1:'#000000',bg2:'#000000',subColor:'#fbbf24',headColor:'#ffffff',ov:100,imgH:65,gOn:false,font:'Inter',align:'center',bdOn:false}],
-['News Melt',{bg1:'#0f172a',bg2:'#0f172a',subColor:'#38bdf8',headColor:'#ffffff',ov:100,imgH:65,gOn:false,font:'Noto Serif Bengali',align:'left',bdOn:true,bdText:'EXCLUSIVE',bdBg:'#38bdf8'}],
-['Breaking',{bg1:'#b90000',bg2:'#6b0000',subColor:'#facc15',headColor:'#ffffff',acC:'#facc15', bdOn:true, bdText:'BREAKING', bdBg:'#facc15', bdFg:'#000000', align:'left', font:'Hind Siliguri',ov:0}],
-['Quote',{bg1:'#111827',bg2:'#000000',subColor:'#9ca3af',headColor:'#ffffff',acC:'#ffffff', bdOn:false, align:'center', font:'Noto Serif Bengali', headW:'500', headLS:1, sep:20,ov:0}],
-['Cyberpunk',{bg1:'#020617',bg2:'#1e1b4b',subColor:'#f0abfc',headColor:'#22d3ee',acC:'#f0abfc', font:'Baloo Da 2', align:'left', gAng:45, con:120, sat:130,ov:0}],
-['Vintage',{bg1:'#451a03',bg2:'#290b0b',subColor:'#d4a373',headColor:'#faedcd',acC:'#d4a373', font:'Tiro Bangla', align:'center', sep:60, con:90, gray:30,ov:0}],
-['Neon Night',{bg1:'#0a0014',bg2:'#2e0057',subColor:'#ff2bd6',headColor:'#00f5ff',font:'Baloo Da 2',gAng:200,imgH:50,vig:50,shad:10,upper:true,acOn:true,acC:'#ff2bd6',con:115}],
-['Sunset',{bg1:'#ff7e5f',bg2:'#7b2ff7',subColor:'#fff3b0',headColor:'#ffffff',gAng:135,font:'Anek Bangla',imgH:45,tint:'#ff7e5f',tintOp:15}],
-['Ocean',{bg1:'#0077b6',bg2:'#03045e',subColor:'#caf0f8',headColor:'#ffffff',gAng:180,imgH:52,tint:'#0077b6',tintOp:20,ov:60}],
-['Forest',{bg1:'#14532d',bg2:'#052e16',subColor:'#bef264',headColor:'#f0fdf4',font:'Noto Serif Bengali',align:'left',acOn:true,acC:'#bef264'}],
-['Royal Gold',{bg1:'#1c1917',bg2:'#000000',subColor:'#d4af37',headColor:'#f5e6b3',font:'Noto Serif Bengali',bw:10,bc:'#d4af37',shad:2,vig:30}],
-['Minimal White',{gOn:false,bg1:'#ffffff',subColor:'#6366f1',headColor:'#0f172a',shad:0,font:'Inter',align:'left',headW:'700',ov:60,imgH:55}],
-['Paper',{gOn:false,bg1:'#f5efe3',subColor:'#b45309',headColor:'#1c1917',shad:0,font:'Noto Serif Bengali',align:'left',ov:50,bw:12,bc:'#f5efe3',sep:25}],
-['Sports',{bg1:'#065f46',bg2:'#022c22',subColor:'#fde047',headColor:'#ffffff',upper:true,font:'Inter',bdOn:true,bdText:'MATCH DAY',bdBg:'#fde047',acOn:true,acC:'#fde047',acH:10,con:115,sat:120}],
-['Tech Blue',{bg1:'#0b1020',bg2:'#1d4ed8',gAng:150,subColor:'#60a5fa',headColor:'#ffffff',font:'Inter',align:'left',bdOn:true,bdText:'TECH',bdBg:'#2563eb',bdFg:'#ffffff',acOn:true,acC:'#60a5fa',tint:'#1d4ed8',tintOp:15}],
-['Politics',{bg1:'#1e3a8a',bg2:'#7f1d1d',gAng:90,subColor:'#fecaca',headColor:'#ffffff',font:'Hind Siliguri',bdOn:true,bdText:'POLITICS',bdBg:'#ffffff',acOn:true,acC:'#ef4444',acH:8}],
-['Lifestyle Rose',{bg1:'#fb7185',bg2:'#be185d',gAng:160,subColor:'#fff1f2',headColor:'#ffffff',font:'Anek Bangla',align:'center',imgH:52,sat:110,bw:8,bc:'#ffffff',rad:16}],
-['Food',{bg1:'#c2410c',bg2:'#7c2d12',subColor:'#fde68a',headColor:'#fff7ed',font:'Baloo Da 2',imgH:58,sat:130,con:110,bdOn:true,bdText:'RECIPE',bdBg:'#fde68a',acOn:true,acC:'#fde68a'}],
-['Health Teal',{bg1:'#0f766e',bg2:'#134e4a',subColor:'#99f6e4',headColor:'#ffffff',font:'Noto Sans Bengali',align:'left',bdOn:true,bdText:'HEALTH',bdBg:'#99f6e4'}],
-['Finance',{bg1:'#052e16',bg2:'#022c22',subColor:'#4ade80',headColor:'#ecfdf5',font:'Inter',align:'left',acOn:true,acC:'#4ade80',bdOn:true,bdText:'MARKETS',bdBg:'#4ade80',gray:25}],
-['Obituary',{gOn:false,bg1:'#000000',subColor:'#d1d5db',headColor:'#ffffff',font:'Noto Serif Bengali',gray:100,ov:100,imgH:62,vig:40,shad:2,headW:'600',align:'center'}],
-['Festival',{bg1:'#064e3b',bg2:'#047857',gAng:135,subColor:'#fcd34d',headColor:'#fffbeb',font:'Tiro Bangla',bw:14,bc:'#fcd34d',rad:6,sat:110}],
-['Motivation',{bg1:'#4c1d95',bg2:'#1e1b4b',gAng:170,subColor:'#fbbf24',headColor:'#ffffff',font:'Hind Siliguri',align:'center',headSize:50,imgH:40,upper:true,vig:35}],
-['Flash Sale',{bg1:'#facc15',bg2:'#f97316',gAng:120,subColor:'#7f1d1d',headColor:'#111827',shad:0,font:'Baloo Da 2',bdOn:true,bdText:'SALE',bdBg:'#dc2626',bdFg:'#ffffff',bdSize:20,upper:true}],
-['Mono Noir',{gOn:false,bg1:'#111111',subColor:'#a3a3a3',headColor:'#ffffff',font:'Inter',gray:100,con:125,ov:80,imgH:60,align:'left',headW:'700',shad:0}],
-['Pastel',{bg1:'#fde2e4',bg2:'#cddafd',gAng:135,subColor:'#6d28d9',headColor:'#1f2937',shad:0,font:'Anek Bangla',rad:24,bw:10,bc:'#ffffff',imgH:50}],
-['Newsroom',{gOn:false,bg1:'#ffffff',subColor:'#b91c1c',headColor:'#111827',shad:0,font:'Noto Serif Bengali',align:'left',acOn:true,acC:'#b91c1c',acH:10,ov:40,bdOn:true,bdText:'LATEST',bdBg:'#b91c1c',bdFg:'#ffffff'}],
-['Blood Moon',{bg1:'#1a0000',bg2:'#450a0a',gAng:180,subColor:'#fca5a5',headColor:'#ffffff',font:'Hind Siliguri',vig:60,tint:'#7f1d1d',tintOp:30,con:120,imgH:60,ov:70}],
-['Aurora',{bg1:'#022c22',bg2:'#312e81',gAng:200,subColor:'#5eead4',headColor:'#f0fdfa',font:'Inter',align:'center',tint:'#14b8a6',tintOp:15,vig:30,ov:80,imgH:58}]
+['Cinematic Melt',{bg1:'#000000',bg2:'#000000',subColor:'#fbbf24',headColor:'#ffffff',ov:100,imgH:65,gOn:false,align:'center',bdOn:false}],
+['News Melt',{bg1:'#0f172a',bg2:'#0f172a',subColor:'#38bdf8',headColor:'#ffffff',ov:100,imgH:65,gOn:false,align:'left',bdOn:false,bdText:'এক্সক্লুসিভ',bdBg:'#38bdf8'}],
+['Breaking',{bg1:'#b90000',bg2:'#6b0000',subColor:'#facc15',headColor:'#ffffff',acC:'#facc15', bdOn:false, bdText:'ব্রেকিং', bdBg:'#facc15', bdFg:'#000000', align:'left',ov:0}],
+['Quote',{bg1:'#111827',bg2:'#000000',subColor:'#9ca3af',headColor:'#ffffff',acC:'#ffffff', bdOn:false, align:'center', headW:'500', headLS:1, sep:20,ov:0}],
+['Paper',{gOn:false,bg1:'#f5efe3',subColor:'#b45309',headColor:'#1c1917',shad:0,align:'left',ov:50,bw:12,bc:'#f5efe3',sep:25}]
 ];
 const KEEP=/^(ratio|.*Src|.*Text|ex.*|logo.*|ad.*|crOn|ftOn|imgX|imgY|zoom|fit)$/;
 const rg=(h,a)=>{const n=parseInt(h.slice(1),16);return`rgba(${n>>16},${n>>8&255},${n&255},${a})`};
@@ -149,8 +125,8 @@ fd.style.cssText=`background:linear-gradient(to bottom, transparent 0%, transpar
 tx.style.background=s.gOn?`linear-gradient(${s.gAng}deg,${s.bg1},${s.bg2})`:s.bg1;
 ac.style.cssText=`display:${s.acOn?'block':'none'};height:${s.acH}px;background:${s.acC}`;
 sub.textContent=s.subText;hd.textContent=s.headText;ft.textContent=s.ftText;cr.textContent=s.crText;bd.textContent=s.bdText;
-P(sub,s.subX,s.subY,tf+`width:90%;font-size:${s.subSize}px;color:${s.subColor};font-weight:${s.subW}`);
-P(hd,s.headX,s.headY,tf+`width:${s.headWd}%;font-size:${s.headSize}px;color:${s.headColor};font-weight:${s.headW};line-height:${s.headLH};letter-spacing:${s.headLS}px;text-transform:${s.upper?'uppercase':'none'}`);
+P(sub,s.subX,s.subY,tf+`display:${s.subOn?'block':'none'};width:90%;font-size:${s.subSize}px;color:${s.subColor};font-weight:${s.subW}`);
+P(hd,s.headX,s.headY,tf+`width:${s.headWd}%;font-size:${s.headSize}px;color:${s.headColor};font-weight:${s.headW};line-height:${s.headLH};letter-spacing:${s.headLS}px`);
 P(ft,s.ftX,s.ftY,tf+`display:${s.ftOn?'block':'none'};width:90%;font-size:${s.ftSize}px;color:${s.ftColor}`);
 P(cr,s.crX,s.crY,tf+`display:${s.crOn?'block':'none'};white-space:nowrap;font-size:${s.crSize}px;color:${s.crColor}`);
 P(bd,s.bdX,s.bdY,`display:${s.bdOn?'block':'none'};font-family:'${s.font}',sans-serif;font-size:${s.bdSize}px;background:${s.bdBg};color:${s.bdFg}`);
