@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tusovka Card Generator Pro - Ultimate</title>
+<title>AniMaxx Card Generator Pro - Ultimate</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;800&family=Noto+Serif+Bengali:wght@400;600;800&family=Anek+Bangla:wght@400;600;800&family=Baloo+Da+2:wght@400;600;800&family=Tiro+Bangla&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
@@ -42,7 +42,7 @@ details{border-bottom:1px solid #f1f5f9}summary{padding:12px 16px;font-weight:60
 #bd2{padding:4px 14px;border-radius:5px;font-weight:700;z-index:20;white-space:nowrap}
 </style></head><body>
 <header>
-<div class="brand"><div class="lg">TC</div><div><b class="t">Tusovka Card Generator<span class="pro">ULTIMATE</span></b><br><small>Developed by Anim Arafat</small></div></div>
+<div class="brand"><div class="lg">AM</div><div><b class="t">AniMaxx Card Generator<span class="pro">ULTIMATE</span></b><br><small>Developed by Anim Arafat</small></div></div>
 <div class="bar">
 <button class="btn" id="un" title="Undo (Ctrl+Z)">Undo</button><button class="btn" id="re" title="Redo (Ctrl+Y)">Redo</button>
 <select data-f="ratio">
@@ -62,7 +62,7 @@ details{border-bottom:1px solid #f1f5f9}summary{padding:12px 16px;font-weight:60
 <section id="stage"><div id="wrap"><div id="cv">
 <img id="lg2" class="d" data-x="logoX" data-y="logoY" alt="">
 <div id="bd2" class="d" data-x="bdX" data-y="bdY"></div>
-<div id="ic"><img id="im" alt=""><div id="tn"></div><div id="fd"></div><div id="cr" class="d" data-x="crX" data-y="crY"></div></div>
+<div id="ic"><div id="im"></div><div id="tn"></div><div id="fd"></div><div id="src" class="d" data-x="srcX" data-y="srcY"></div><div id="dt" class="d" data-x="dtX" data-y="dtY"></div><div id="cr" class="d" data-x="crX" data-y="crY"></div></div>
 <div id="tx"><div id="ac"></div><div id="sub" class="d" data-x="subX" data-y="subY"></div><div id="hd" class="d" data-x="headX" data-y="headY"></div><div id="ft" class="d" data-x="ftX" data-y="ftY"></div></div>
 <div id="ad"><img id="am" alt=""></div>
 </div></div></section></main>
@@ -74,9 +74,11 @@ subOn:true,subText:'Subheading or Category',subSize:40,subColor:'#facc15',subW:'
 headText:'Enter your main headline or powerful quote here',headSize:60,headColor:'#ffffff',headW:'800',headLH:1.15,headLS:0,headWd:90,headX:50,headY:42,
 bg1:'#b90000',bg2:'#6b0000',gOn:false,gAng:160,acOn:false,acC:'#facc15',acH:6,
 logoOn:true,logoSrc:ph(400,200,'Your Logo','#ffffff','#000000'),logoW:20,logoX:85.7,logoY:6,logoOp:100,
-bdOn:false,bdText:'এক্সক্লুসিভ',bdBg:'#facc15',bdFg:'#000000',bdSize:16,bdX:18,bdY:5,
-crOn:false,crText:'Photo: Collected',crSize:12,crColor:'#ffffff',crX:14,crY:94,
-ftOn:true,ftText:'www.mzamin.com',ftSize:13,ftColor:'#ffffff',ftX:50,ftY:92,
+bdOn:false,bdText:'এক্সক্লুসিভ',bdBg:'#facc15',bdFg:'#000000',bdSize:16,bdX:14.3,bdY:6.6,
+crOn:false,crFont:'Hind Siliguri',crText:'Photo: Collected',crSize:12,crColor:'#ffffff',crX:14,crY:94,
+srcOn:false,srcFont:'Hind Siliguri',srcText:'সোর্স- রয়টার্স',srcSize:15,srcColor:'#ffffff',srcX:88.3,srcY:20.3,
+dtOn:true,dtFont:'Noto Serif Bengali',dtText:'১৪ অক্টোবর, ২০২৬',dtSize:15,dtColor:'#ffffff',dtX:15,dtY:12.3,
+ftOn:false,ftFont:'Times New Roman',ftText:'www.mzamin.com',ftSize:17,ftColor:'#ffffff',ftX:84.2,ftY:92,
 adOn:true,adSrc:ph(1200,200,'Your 1200x200 Ad Banner Here','#f8fafc','#64748b'),adH:12,adFit:'contain',
 bw:0,bc:'#ffffff',rad:0,exFmt:'png',exW:'1080',exQ:0.95};
 const FN=['Hind Siliguri','Times New Roman', 'Noto Sans Bengali','Noto Serif Bengali','Anek Bangla','Baloo Da 2','Tiro Bangla'],WT=['400','500','600','700','800'];
@@ -85,7 +87,7 @@ const SC=[
 ['Text',[['font','Font','s',FN],['align','Alignment','s',['center','left','right']],['shad','Text shadow','r',0,14,1,'px'],['','Sub heading','h'],['subOn','Show sub heading','c'],['subText','Text','t'],['subSize','Size','r',12,70,1,'px'],['subColor','Color','k'],['subW','Weight','s',WT],['subX','X (drag on card)','r',0,100,1,'%'],['subY','Y','r',0,100,1,'%'],['','Main heading','h'],['headText','Text','a'],['headSize','Size','r',20,120,1,'px'],['headColor','Color','k'],['headW','Weight','s',WT],['headLH','Line height','r',1,2,.05],['headLS','Letter spacing','r',-2,10,.5,'px'],['headWd','Box width','r',30,100,1,'%'],['headX','X','r',0,100,1,'%'],['headY','Y','r',0,100,1,'%']]],
 ['Background & accent',[['bg1','Color 1','k'],['gOn','Use gradient','c'],['bg2','Color 2','k'],['gAng','Gradient angle','r',0,360,1,'°'],['acOn','Top accent bar','c'],['acC','Accent color','k'],['acH','Accent thickness','r',1,30,1,'px']]],
 ['Logo',[['logoOn','Show logo','c'],['logoSrc','Upload logo','f'],['logoW','Size','r',5,80,1,'%'],['logoX','X (drag)','r',0,100,1,'%'],['logoY','Y','r',0,100,1,'%'],['logoOp','Opacity','r',10,100,1,'%']]],
-['Badge, credit & footer',[['bdOn','Show badge','c'],['bdText','Badge text','s',['এক্সক্লুসিভ','ব্রেকিং','এইমাত্র পাওয়া']],['bdBg','Badge color','k'],['bdFg','Badge text color','k'],['bdSize','Size','r',10,40,1,'px'],['bdX','X','r',0,100,1,'%'],['bdY','Y','r',0,100,1,'%'],['','Photo credit (on image)','h'],['crOn','Show credit','c'],['crText','Text','s',['Photo: AI','Photo: Collected']],['crSize','Size','r',8,30,1,'px'],['crColor','Color','k'],['crX','X','r',0,100,1,'%'],['crY','Y','r',0,100,1,'%'],['','Footer (on text area)','h'],['ftOn','Show footer','c'],['ftText','Text','t'],['ftSize','Size','r',8,30,1,'px'],['ftColor','Color','k'],['ftX','X','r',0,100,1,'%'],['ftY','Y','r',0,100,1,'%']]],
+['Badge, Extras & Footer',[['bdOn','Show badge','c'],['bdText','Badge text','s',['এক্সক্লুসিভ','ব্রেকিং','এইমাত্র পাওয়া']],['bdBg','Badge color','k'],['bdFg','Badge text color','k'],['bdSize','Size','r',10,40,1,'px'],['bdX','X','r',0,100,.1,'%'],['bdY','Y','r',0,100,.1,'%'],['','Photo credit (on image)','h'],['crOn','Show credit','c'],['crFont','Font','s',FN],['crText','Text','s',['Photo: AI','Photo: Collected']],['crSize','Size','r',8,30,1,'px'],['crColor','Color','k'],['crX','X','r',0,100,1,'%'],['crY','Y','r',0,100,1,'%'],['','Source (on image)','h'],['srcOn','Show source','c'],['srcFont','Font','s',FN],['srcText','Text','t'],['srcSize','Size','r',8,30,1,'px'],['srcColor','Color','k'],['srcX','X','r',0,100,.1,'%'],['srcY','Y','r',0,100,.1,'%'],['','Date (on image)','h'],['dtOn','Show date','c'],['dtFont','Font','s',FN],['dtText','Text','t'],['dtSize','Size','r',8,30,1,'px'],['dtColor','Color','k'],['dtX','X','r',0,100,.1,'%'],['dtY','Y','r',0,100,.1,'%'],['','Footer (on text area)','h'],['ftOn','Show footer','c'],['ftFont','Font','s',FN],['ftText','Text','t'],['ftSize','Size','r',8,30,1,'px'],['ftColor','Color','k'],['ftX','X','r',0,100,.1,'%'],['ftY','Y','r',0,100,.1,'%']]],
 ['Ad banner',[['adOn','Show ad banner','c'],['adSrc','Upload banner','f'],['adH','Height','r',5,40,1,'%'],['adFit','Fit','s',['contain','fill','cover']]]],
 ['Frame',[['bw','Border width','r',0,30,1,'px'],['bc','Border color','k'],['rad','Corner radius','r',0,80,1,'px']]],
 ['Export',[['exFmt','Format','s',['png','jpeg']],['exW','Width (px)','s',['640','1080','1440','1920']],['exQ','JPG quality','r',.5,1,.05]]]];
@@ -97,7 +99,7 @@ const TH=[
 ['Quote',{bg1:'#111827',bg2:'#000000',subColor:'#9ca3af',headColor:'#ffffff',acC:'#ffffff', bdOn:false, align:'center', headW:'500', headLS:1, sep:20,ov:0}],
 ['Paper',{gOn:false,bg1:'#f5efe3',subColor:'#b45309',headColor:'#1c1917',shad:0,align:'left',ov:50,bw:12,bc:'#f5efe3',sep:25}]
 ];
-const KEEP=/^(ratio|.*Src|.*Text|ex.*|logo.*|ad.*|crOn|ftOn|imgX|imgY|zoom|fit)$/;
+const KEEP=/^(ratio|.*Src|.*Text|ex.*|logo.*|ad.*|crOn|ftOn|srcOn|dtOn|imgX|imgY|zoom|fit)$/;
 const rg=(h,a)=>{const n=parseInt(h.slice(1),16);return`rgba(${n>>16},${n>>8&255},${n&255},${a})`};
 
 const U={};let s={...D};try{s={...D,...JSON.parse(localStorage.getItem('tc')||'{}')}}catch(e){}
@@ -109,26 +111,31 @@ else if(t=='s')i=`<select data-f="${k}">${a.map(o=>`<option>${o}</option>`).join
 else if(t=='k')i=`<input type="color" data-f="${k}">`;else if(t=='t')i=`<input type="text" data-f="${k}">`;
 else if(t=='a')i=`<textarea rows="2" data-f="${k}"></textarea>`;else i=`<input type="file" accept="image/*" data-f="${k}">`;
 return`<div class="f"><label>${l}<b data-v="${k}"></b></label>${i}</div>`};
-$('sb').innerHTML=`<details open><summary>Templates & Themes (${TH.length})</summary><div class="bd"><div class="ths"><button class="th rnd" data-t="r">🎲 Random template</button>${TH.map((t,n)=>`<button class="th" data-t="${n}" style="background:linear-gradient(135deg,${t[1].bg1},${t[1].bg2||t[1].bg1});color:${t[1].subColor}">${t[0]}</button>`).join('')}</div></div></details>`+SC.map((x,n)=>`<details${n==0?' open':''}><summary>${x[0]}</summary><div class="bd">${x[1].map(row).join('')}</div></details>`).join('')+`<div class="bd"><button class="btn" id="rs">Reset everything</button></div><div class="hint">Click the small number boxes to use Arrow Keys for exact sizes. Drag text on the card to move it. Templates keep your text, images and logo.</div>`;
-const cv=$('cv'),ic=$('ic'),im=$('im'),tn=$('tn'),fd=$('fd'),tx=$('tx'),ac=$('ac'),sub=$('sub'),hd=$('hd'),ft=$('ft'),cr=$('cr'),bd=$('bd2'),lg=$('lg2'),ad=$('ad'),am=$('am'),wrap=$('wrap'),stage=$('stage');
+$('sb').innerHTML=`<details open><summary>Templates & Themes (${TH.length})</summary><div class="bd"><div class="ths"><button class="th rnd" data-t="r">🎲 Random template</button>${TH.map((t,n)=>`<button class="th" data-t="${n}" style="background:linear-gradient(135deg,${t[1].bg1},${t[1].bg2||t[1].bg1});color:${t[1].subColor}">${t[0]}</button>`).join('')}</div></div></details>`+SC.map((x,n)=>`<details${n==0?' open':''}><summary${n===0||n===1?' style="color:red;"':''}>${x[0]}</summary><div class="bd">${x[1].map(row).join('')}</div></details>`).join('')+`<div class="bd"><button class="btn" id="rs">Reset everything</button></div><div class="hint">Click the small number boxes to use Arrow Keys for exact sizes. Drag text on the card to move it. Templates keep your text, images and logo.</div>`;
+const cv=$('cv'),ic=$('ic'),im=$('im'),tn=$('tn'),fd=$('fd'),tx=$('tx'),ac=$('ac'),sub=$('sub'),hd=$('hd'),ft=$('ft'),cr=$('cr'),bd=$('bd2'),lg=$('lg2'),ad=$('ad'),am=$('am'),wrap=$('wrap'),stage=$('stage'),src=$('src'),dt=$('dt');
 let vz='fit';
 const S1=(e,v)=>{if(e.getAttribute('src')!==v)e.src=v};
 const filt=m=>`brightness(${s.bri}%) contrast(${s.con}%) saturate(${s.sat}%) grayscale(${s.gray}%) sepia(${s.sep}%) blur(${s.blur*m}px)`;
 const P=(e,x,y,c)=>e.style.cssText=`left:${x}%;top:${y}%;${c}`;
 function R(){
-const sh=`0 2px ${s.shad}px rgba(0,0,0,.5)`,tf=`font-family:'${s.font}',sans-serif;text-shadow:${sh};text-align:${s.align};`,tc=rg(s.tint,s.tintOp/100);
+const sh=`0 2px ${s.shad}px rgba(0,0,0,.5)`, tc=rg(s.tint,s.tintOp/100);
+const getTf = (font) => `font-family:'${font}',sans-serif;text-shadow:${sh};text-align:${s.align};`;
+
 cv.style.cssText=`aspect-ratio:${s.ratio};border:${s.bw}px solid ${s.bc};border-radius:${s.rad}px`;
-ic.style.height=s.imgH+'%';S1(im,s.imgSrc);
-im.style.cssText=`object-fit:${s.fit};object-position:${s.imgX}% ${s.imgY}%;transform:scale(${s.zoom/100});transform-origin:${s.imgX}% ${s.imgY}%;filter:${filt(1)}`;
+ic.style.height=s.imgH+'%';
+im.style.cssText=`background-image:url('${s.imgSrc}');background-size:${s.fit=='fill'?'100% 100%':s.fit};background-position:${s.imgX}% ${s.imgY}%;background-repeat:no-repeat;transform:scale(${s.zoom/100});transform-origin:${s.imgX}% ${s.imgY}%;filter:${filt(1)}`;
 tn.style.background=`radial-gradient(ellipse at center,rgba(0,0,0,0) ${100-s.vig*.7}%,rgba(0,0,0,${s.vig/100*.9})),linear-gradient(${tc},${tc})`;
 fd.style.cssText=`background:linear-gradient(to bottom, transparent 0%, transparent 20%, ${s.bg1} 100%);opacity:${s.ov/100}`;
 tx.style.background=s.gOn?`linear-gradient(${s.gAng}deg,${s.bg1},${s.bg2})`:s.bg1;
 ac.style.cssText=`display:${s.acOn?'block':'none'};height:${s.acH}px;background:${s.acC}`;
-sub.textContent=s.subText;hd.textContent=s.headText;ft.textContent=s.ftText;cr.textContent=s.crText;bd.textContent=s.bdText;
-P(sub,s.subX,s.subY,tf+`display:${s.subOn?'block':'none'};width:90%;font-size:${s.subSize}px;color:${s.subColor};font-weight:${s.subW}`);
-P(hd,s.headX,s.headY,tf+`width:${s.headWd}%;font-size:${s.headSize}px;color:${s.headColor};font-weight:${s.headW};line-height:${s.headLH};letter-spacing:${s.headLS}px`);
-P(ft,s.ftX,s.ftY,tf+`display:${s.ftOn?'block':'none'};width:90%;font-size:${s.ftSize}px;color:${s.ftColor}`);
-P(cr,s.crX,s.crY,tf+`display:${s.crOn?'block':'none'};white-space:nowrap;font-size:${s.crSize}px;color:${s.crColor}`);
+sub.textContent=s.subText;hd.textContent=s.headText;ft.textContent=s.ftText;cr.textContent=s.crText;bd.textContent=s.bdText;src.textContent=s.srcText;dt.textContent=s.dtText;
+
+P(sub,s.subX,s.subY,getTf(s.font)+`display:${s.subOn?'block':'none'};width:90%;font-size:${s.subSize}px;color:${s.subColor};font-weight:${s.subW}`);
+P(hd,s.headX,s.headY,getTf(s.font)+`width:${s.headWd}%;font-size:${s.headSize}px;color:${s.headColor};font-weight:${s.headW};line-height:${s.headLH};letter-spacing:${s.headLS}px`);
+P(ft,s.ftX,s.ftY,getTf(s.ftFont)+`display:${s.ftOn?'block':'none'};width:90%;font-size:${s.ftSize}px;color:${s.ftColor}`);
+P(cr,s.crX,s.crY,getTf(s.crFont)+`display:${s.crOn?'block':'none'};white-space:nowrap;font-size:${s.crSize}px;color:${s.crColor}`);
+P(src,s.srcX,s.srcY,getTf(s.srcFont)+`display:${s.srcOn?'block':'none'};white-space:nowrap;font-size:${s.srcSize}px;color:${s.srcColor}`);
+P(dt,s.dtX,s.dtY,getTf(s.dtFont)+`display:${s.dtOn?'block':'none'};white-space:nowrap;font-size:${s.dtSize}px;color:${s.dtColor}`);
 P(bd,s.bdX,s.bdY,`display:${s.bdOn?'block':'none'};font-family:'${s.font}',sans-serif;font-size:${s.bdSize}px;background:${s.bdBg};color:${s.bdFg}`);
 S1(lg,s.logoSrc);P(lg,s.logoX,s.logoY,`display:${s.logoOn?'block':'none'};width:${s.logoW}%;opacity:${s.logoOp/100}`);
 S1(am,s.adSrc);ad.style.cssText=`height:${s.adH}%;display:${s.adOn?'flex':'none'}`;am.style.objectFit=s.adFit;fit()}
@@ -140,7 +147,13 @@ let H=[],hi=-1;
 function save(){try{localStorage.setItem('tc',JSON.stringify(s))}catch(e){try{const t={...s};['imgSrc','logoSrc','adSrc'].forEach(k=>t[k]=D[k]);localStorage.setItem('tc',JSON.stringify(t))}catch(e){}}}
 function commit(){const p=H[hi];if(!p||Object.keys(s).some(k=>p[k]!==s[k])){H=H.slice(0,hi+1);H.push({...s});if(H.length>40)H.shift();hi=H.length-1}save()}
 function go(d){const n=hi+d;if(n<0||n>=H.length)return;hi=n;s={...H[hi]};A();save()}
-function chg(t){const k=t.dataset.f;s[k]=t.type=='checkbox'?t.checked:t.type=='range'||t.type=='number'?+t.value:t.value;lab(k)}
+function chg(t){
+  const k=t.dataset.f;
+  s[k]=t.type=='checkbox'?t.checked:t.type=='range'||t.type=='number'?+t.value:t.value;
+  if(t.type=='range'){const n=t.nextElementSibling;if(n&&n.type=='number')n.value=t.value}
+  if(t.type=='number'){const r=t.previousElementSibling;if(r&&r.type=='range')r.value=t.value}
+  lab(k);
+}
 function load(f,k){if(!f||!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=e=>{s[k]=e.target.result;R();commit()};r.readAsDataURL(f)}
 document.addEventListener('input',e=>{const t=e.target;if(t.dataset.f&&t.type!='file'){chg(t);R()}});
 document.addEventListener('change',e=>{const t=e.target;if(!t.dataset.f)return;if(t.type=='file')return load(t.files[0],t.dataset.f);chg(t);R();commit()});
@@ -153,22 +166,25 @@ cv.addEventListener('pointerdown',e=>{const t=e.target.closest('.d'),p=e.target.
 if(t)o={x:t.dataset.x,y:t.dataset.y,b:t.parentElement,m:1};else if(p)o={x:'imgX',y:'imgY',b:p,m:-1};else return;
 const r=o.b.getBoundingClientRect();dr={...o,w:r.width,h:r.height,sx:e.clientX,sy:e.clientY,ox:s[o.x],oy:s[o.y]};e.preventDefault()});
 addEventListener('pointermove',e=>{if(!dr)return;const c=v=>Math.max(0,Math.min(100,+v.toFixed(1)));
-s[dr.x]=c(dr.ox+dr.m*(e.clientX-dr.sx)/dr.w*100);s[dr.y]=c(dr.oy+dr.m*(e.clientY-dr.sy)/dr.h*100);A()});
+s[dr.x]=c(dr.ox+dr.m*(e.clientX-dr.sx)/dr.w*100);s[dr.y]=c(dr.oy+dr.m*(e.clientY-dr.sy)/dr.h*100);A();
+if(dr.x){const n=document.querySelector(`input[type="number"][data-f="${dr.x}"]`);if(n){n.value=s[dr.x];const rg=n.previousElementSibling;if(rg)rg.value=s[dr.x]}}
+if(dr.y){const n=document.querySelector(`input[type="number"][data-f="${dr.y}"]`);if(n){n.value=s[dr.y];const rg=n.previousElementSibling;if(rg)rg.value=s[dr.y]}}
+});
 addEventListener('pointerup',()=>{if(dr){dr=null;commit()}});
 stage.addEventListener('dragover',e=>e.preventDefault());
 stage.addEventListener('drop',e=>{e.preventDefault();load(e.dataTransfer.files[0],'imgSrc')});
 addEventListener('paste',e=>{const i=[...(e.clipboardData?.items||[])].find(x=>x.type.startsWith('image/'));if(i)load(i.getAsFile(),'imgSrc')});
 async function render(){
-const z=wrap.style.zoom;wrap.style.zoom=1;await document.fonts.ready;const os=im.src,of=im.style.filter;
-try{const i=new Image();i.src=os;await i.decode();const k=Math.min(1,2400/Math.max(i.naturalWidth,i.naturalHeight)),c=document.createElement('canvas');c.width=i.naturalWidth*k;c.height=i.naturalHeight*k;const x=c.getContext('2d');
-if('filter' in x){x.filter=filt(c.width/640);x.drawImage(i,0,0,c.width,c.height);im.src=c.toDataURL('image/png');im.style.filter='none';await im.decode()}}catch(e){}
+const z=wrap.style.zoom;wrap.style.zoom=1;await document.fonts.ready;const of=im.style.filter;
+try{const i=new Image();i.src=s.imgSrc;await i.decode();const k=Math.min(1,2400/Math.max(i.naturalWidth,i.naturalHeight)),c=document.createElement('canvas');c.width=i.naturalWidth*k;c.height=i.naturalHeight*k;const x=c.getContext('2d');
+if('filter' in x){x.filter=filt(c.width/640);x.drawImage(i,0,0,c.width,c.height);im.style.backgroundImage=`url('${c.toDataURL('image/png')}')`;im.style.filter='none'}}catch(e){}
 try{return await html2canvas(cv,{scale:Number(s.exW)/640,useCORS:true,backgroundColor:s.exFmt=='jpeg'?'#ffffff':null,logging:false})}
-finally{im.src=os;im.style.filter=of;wrap.style.zoom=z}}
+finally{im.style.backgroundImage=`url('${s.imgSrc}')`;im.style.filter=of;wrap.style.zoom=z}}
 async function out(copy,btn){const t=btn.textContent;btn.textContent='Working…';btn.disabled=true;
 try{const c=await render(),m=copy?'image/png':'image/'+s.exFmt;
 const b=await new Promise(r=>c.toBlob(r,m,s.exQ));
 if(copy){await navigator.clipboard.write([new ClipboardItem({'image/png':b})]);btn.textContent='Copied';setTimeout(()=>{btn.textContent=t},1200);btn.disabled=false;return}
-const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`Tusovka-Card-${Date.now()}.${s.exFmt=='jpeg'?'jpg':'png'}`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
+const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`AniMaxx-Card-${Date.now()}.${s.exFmt=='jpeg'?'jpg':'png'}`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
 catch(e){console.error(e);alert('Export failed. Use uploaded images (not external URLs) and try again.')}
 btn.textContent=t;btn.disabled=false}
 $('dl').onclick=e=>out(false,e.currentTarget);$('cp').onclick=e=>out(true,e.currentTarget);
